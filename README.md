@@ -49,6 +49,7 @@
 - [Security](#security)
 - [Documentation](#documentation)
 - [Contributing](#contributing)
+- [My Open-Source Contributions](#my-open-source-contributions)
 - [Project context](#project-context)
 
 ## Platform overview
@@ -322,6 +323,28 @@ CI uses dummy frontend and AI-service values where configuration is required onl
 Contributions should use a focused branch and pull request. Run the relevant formatter, linter, tests, and builds before pushing. Do not push directly to `main`, bundle unrelated changes, or merge another contributor's pull request without authorization.
 
 See [`CONTRIBUTING.md`](./CONTRIBUTING.md) for the complete workflow, commit-message convention, secret-scanning process, and review requirements.
+
+## My Open-Source Contributions
+
+**Contributor:** [Tushar Shende](https://github.com/Tushar-shende2004)
+
+I contribute bug fixes, reliability improvements, security hardening, and automated regression tests to AI Mentor through focused GitHub issues and pull requests.
+
+### Merged pull requests
+
+- **[PR #466 — Validate AI-generated chat navigation routes](https://github.com/Deepak3699/Ai_Mentor/pull/466)**  
+  Strengthened chat safety by separating trusted system instructions from student input, validating model-generated navigation directives against approved application routes, removing route directives from visible responses, and adding regression tests. Validation reported **227 tests passed**.
+
+- **[PR #402 — Fix stuck processing status on TTS and asset failures](https://github.com/Deepak3699/Ai_Mentor/pull/402)**  
+  Improved AI lesson-generation reliability by handling text-to-speech, missing assets, FFmpeg, provider, and unexpected processing failures with explicit failed states and stable public error codes. Added regression coverage for status transitions, timestamps, cache cleanup, metadata preservation, and sensitive-data redaction. Validation included **102 AI-service tests passed**.
+
+- **[PR #305 — Fix bulk lesson creation transaction](https://github.com/Deepak3699/Ai_Mentor/pull/305)**  
+  Made bulk lesson creation atomic using a Sequelize transaction, so a failed insert rolls back the batch instead of leaving partially created lessons. Added tests for successful creation and insert-failure rollback; **14 focused tests passed**.
+
+### In progress
+
+- **[PR #394 — Replace unsafe AI-service output with structured logging](https://github.com/Deepak3699/Ai_Mentor/pull/394)** *(open)*  
+  Working on safer AI-service logging by limiting logged fields, avoiding raw exception details, hashing unsafe identifiers, and adding tests for redaction and accidental print output. The pull request is still open and should not be treated as merged.
 
 ## Project context
 
